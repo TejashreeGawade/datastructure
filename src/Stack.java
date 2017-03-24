@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Stack {
 	static Scanner sc=new Scanner(System.in);
-	static int stack[], top =-1,item=0,size=0;
+	static int stack[], top =-1,item=0,size=0,i;
 	
 	static
 	{
@@ -11,6 +11,7 @@ public class Stack {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int ch;
+		
 		while(true)
 		{
 		System.out.println("1      :        Push");
@@ -23,7 +24,7 @@ public class Stack {
 		ch=Stack.sc.nextInt();
 			switch(ch)
 			{
-				case 1: System.out.println("Enter the stack elements\n");
+				case 1: System.out.println("Enter the stack elements");
 				        item=Stack.sc.nextInt();
 						Stack.push(item);
 						break;
@@ -44,7 +45,7 @@ public class Stack {
 						}
 						else
 						{
-							System.out.println("The Poped Element is:"+item);
+							System.out.println("The Peek Element is:"+item);
 						}
 						break;
 				case 4: Stack.traverse();
@@ -57,7 +58,7 @@ public class Stack {
 	}
 	static void create()
 	{
-		int size;
+		//int size;
 		System.out.println("Enter the Size of the Stack");
 		size=Stack.sc.nextInt();
 		Stack.stack= new int[size];
@@ -65,6 +66,7 @@ public class Stack {
 	}
 	static void push(int item)
 	{
+		//System.out.println("The Size of Stack:"+size);
 		if(Stack.isFull())
 		{
 			System.out.println("Stack is Overflow");
@@ -125,10 +127,10 @@ public class Stack {
 		}
 		else
 		{
-			System.out.println("Stack Elements are:\n");
-			for(int i=top;i>=top;i--)
+			//System.out.println("Stack Elements are:\n");
+			for(i=top;i>=0;i--)
 			{
-				System.out.println(stack[i]);
+				System.out.println(Stack.stack[i]);
 			}
 		}
 	}
